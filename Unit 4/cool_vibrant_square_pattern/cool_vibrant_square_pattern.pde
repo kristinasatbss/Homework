@@ -1,13 +1,36 @@
-//set up
-size(300,300);
+// setup fuction - things we once
+// draw function - things that should happen repeatedly
+// other functions - things we teach the computer to do
 
-//rectangles
-strokeWeight(8);
-fill(0, 255, 0);
-rect(0, 0, 200, 175);
-fill(255, 255, 0);
-rect(0, 175, 200, 300);
-fill(0, 255, 255);
-rect(200, 0, 300, 175);
-fill(255, 0, 255);
-rect(200, 175, 300, 300);
+//set up
+void setup() {
+
+  size(300, 300);
+  strokeWeight(8);
+
+  // declare variables
+  // type name = ?;
+  float randomWidth = random(0, width - 25);
+  println("width is" + randomWidth);
+  float randomHeight = random(0, height - 25);
+
+  //rectangles
+  fill(0, 255, 0);
+  rect(0, 0, randomWidth, randomHeight);
+
+  fill(255, 255, 0);
+  rect(randomWidth, 0, width - randomWidth, randomHeight);
+
+
+  fill(0, 255, 255);
+  rect(0, randomHeight, randomHeight, height - randomHeight);
+
+  fill(255, 0, 255);
+  rect(randomWidth, randomHeight, width - randomWidth, height - randomHeight);
+}
+
+
+
+
+void draw() {
+}
