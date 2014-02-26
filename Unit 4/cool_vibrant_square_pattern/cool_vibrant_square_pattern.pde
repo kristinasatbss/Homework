@@ -1,36 +1,49 @@
-// setup fuction - things we once
-// draw function - things that should happen repeatedly
-// other functions - things we teach the computer to do
+float xRandom;
+float yRandom;
+float newWidth;
+float newHeight;
+float newX;
+float newY;
 
-//set up
 void setup() {
-
-  size(300, 300);
-  strokeWeight(8);
-
-  // declare variables
-  // type name = ?;
-  float randomWidth = random(0, width - 25);
-  println("width is" + randomWidth);
-  float randomHeight = random(0, height - 25);
-
-  //rectangles
-  fill(0, 255, 0);
-  rect(0, 0, randomWidth, randomHeight);
-
-  fill(255, 255, 0);
-  rect(randomWidth, 0, width - randomWidth, randomHeight);
-
-
-  fill(0, 255, 255);
-  rect(0, randomHeight, randomHeight, height - randomHeight);
-
-  fill(255, 0, 255);
-  rect(randomWidth, randomHeight, width - randomWidth, height - randomHeight);
+  size(500, 500);
+  strokeWeight(5);
+  xRandom= random(50, width-50);
+  yRandom= random(50, height-50);
+  newWidth= xRandom;
+  newHeight= yRandom;
+  newX= random(50, newWidth);
+  newY= random(50, newHeight);
+  //float xRandom
+  //float yRandom
+  drawRect();
+  drawNewRect();
 }
 
 
+void drawRect() {
+  fill(255, 255, 0);
+  rect(0, 0, xRandom, yRandom);
+  fill(255, 0, 0);
+  rect(xRandom, 0, width-xRandom, yRandom);
+  fill(0, 0, 255);
+  rect(0, yRandom, xRandom, height-yRandom);
+  fill(255, 255, 255);
+  rect(xRandom, yRandom, width-xRandom, height-yRandom);
+  if (yRandom>75);
+}
 
-
-void draw() {
+void drawNewRect() {
+  fill(255, 255, 255);
+  rect(0, 0, newX, newY);
+  fill(0, 0, 255);
+  rect(newX, 0, newWidth-newX, newY);
+  fill(255, 0, 0);
+  rect(0, newY, newX, newHeight-newY);
+  fill(255, 255, 0);
+  rect(newX, newY, newWidth-newX, newHeight-newY);
+  
+  if(xRandom>25){
+  drawRect(xRandom, yRandom);
+  }
 }
