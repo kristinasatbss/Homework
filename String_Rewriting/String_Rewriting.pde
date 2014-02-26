@@ -24,7 +24,14 @@ void setup() {
   
   // slow down the refresh rate
   frameRate(1);
+  
+  // create the string dictionary object
+  // "Using the StringDict class, create a new StringDict object, named 'rules' "
+  rules = new StringDict();
  
+   // Add rules (key-value pairs)
+   //       key    value
+   rules.set("F", "F-F");
   
 }
 
@@ -43,8 +50,17 @@ void draw() {
  
   text("Current frame is: " + frameCount, 0, 200);
   
-  // take each characyer from the axion and copy it to the new word
-  word += axiom.charAt(frameCount-1);
+  //check each character - if it matches a rule, replace it
+  if (axiom.charAt(frameCount-1) == 'F') {
+    //replace
+    word += rules.get("F");
+  } 
+  else {
+    // copy the character directly
+    word += axiom.charAt(frameCount - 1);
+  }
+  
+
   
   //print the new word
   text("Current word is: " + word, 0, 300);
