@@ -33,9 +33,17 @@ void setup() {
    //       key    value
    rules.set("F", "F-F");
   
+    // create the string dictionary object
+  // "Using the StringDict class, create a new StringDict object, named 'rules' "
+  rules = new StringDict();
+ 
+   // Add rules (key-value pairs)
+   //       key    value
+   rules.set("F", "F-F");
+  
 }
 
-// This function runs repeatedly ( unless we stop it with noLoop() )
+// This funcFRAMEBITSmeuns repeatedly ( unless we stop it with noLoop() )
 void draw() {
   
   //repaint the background
